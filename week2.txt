@@ -1,0 +1,108 @@
+Website scaling
+-----------------
+
+WEB SERVER CLUSTERS
+
+The front end can be designed in two ways:
+Transport layer switch- Passes data sent along the TCP (Transmission control protocal) connection to one of the server, depending on some measurement of the servers load.
+Content aware request distribution - it first inspects the HTTP request and decide which server it should forward that request to.
+
+An alternative to set up a web server cluster is to use round-robin designedwith round robin DNS single domain name is associated with multiple IP addresses
+When resolving a host name, a browser would receive a list of multiple adresses, each address corresponding to a server
+
+HTTP
+All communication between clients and servers is based on HTTP. Servers listen 
+HTTP is a simple protocol; it does not have any concept of open connection and does not require a server to maintain information on its clients -
+(Can use HTTP cookies to store session information)
+HTTP is based on TCP; whenever a client issues a request to a server, it first sets up a TCP connection and sends the message on that connection. -
+The same connection is used for receiving the response.
+One of the prolems with the first versionsof HTTP was its ineficient use of TCP connections.
+
+In HTTP 1.0 and older, each request to a server required setting up a seperate connection, when the server had responded, the connection -
+was severed, this was refered to as a non-persistant connection.
+In HTTP 1.1 a persistant connection was introduced, this was a connection that used a single TCP connection to send and receive multiple requests
+
+CACHING
+
+HTTP Caching
+Clients often cache documents
+    - Challenge: update of documents
+    - If modified since cached, requests to check
+When/how often should te original be checked for changes?
+    - Check every time
+    - check every hour?
+    - check every day?
+
+Proxy Caching
+    - \Proxy caching is the most commonly used method to improve web performance
+    - duplicate requests to the same document served from the cache
+    - hits reduce latency, network utilization and server load
+    - introduces problems
+        -Misses increase latency (extra loops)
+        - cache consistency
+
+Cache consistency
+    -Fresh enough is good enough
+    -One writer(Developer), many readers
+        -Most content changes slowly
+-Cache consistency governed by standards
+-"Expiration based cache consistency
+
+problems
+    -Over 50% of all HTTP objects are unreachable
+    -Not easily solvable
+        -Dynamic data [stock prices, scores, web cams]
+        -CGI scripts - Results based on passed params
+        -SSL - Encrypted data is not cacheable
+        -Cookies -results may be based on past data
+        -Hit metering - Owner wants to measure number of hits for revenue etc.
+
+    CDN - Content distribution network
+        -Bootstrap
+    
+    Akamai
+
+API - application program interface
+
+DX - developer experience
+Understand their journey
+    Product Marketing
+    - Why should I use it (Focus: Decision makers)
+        - Position based on industry
+        - Concise messagging of core value
+        - Understand value in 3 seconds
+    - How do I register (Focus: Decision Makers, API Users)
+        - Explain register method
+        - make sign up straight forward
+    Design and Documentation
+    - Where do I start (Focus: Decision Makers, API Users)
+    - How do I use it (Focus: API Users)
+
+An API is only as good as it's documentation.
+
+3:30:3 Rule
+    - 3 seconds to understand API's purpose
+    - 30 seconds to identify entry point into system
+    - 3 minutes to use the API's result
+
+OpenAPI Specification is the answer (Firebase API for reference)
+    - Allow machines/tools to integrate with API
+    - Allow humans to implement API code
+
+Effective documentation tips
+    - Documentation plays a central role i the way API's are perceived by a User
+    - List the fundamentals
+    - Write for humans
+        - Do not assume that users understand API Jargon
+        - Provide context and information for jargon and domain specific words
+        - Maintain consistency of tone.
+    - Explains your request-Response cycles
+    - Empower with experimentaion
+        - Getting started Guides
+        - Interactive Docs and Console
+        - SDK's
+        - Tutorials
+
+    
+
+
