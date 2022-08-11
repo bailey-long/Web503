@@ -1,0 +1,117 @@
+Reality of large web projects
+- takeoff delays
+- poor budget
+- unpolished/unfinished application
+- lack of functionality
+
+Creators => content => software => interface => users
+
+web application quality assurance
+correctness and reliability
+extending + reusing (modularity)
+copatibilty
+efficiency (performance)
+portability
+---
+usability
+functionality
+timelines
+maintainability
+security
+---
+integrity
+reparability
+verifiabiltyt - including monitoring (logging)
+economy
+---
+dispatch: retrieval request and routing
+core services: providing basic functionality
+mapping: associating software constructs/abstractios (e.g objects/api's/libraries) to the data models
+
+Necessities: make sure to setup efficienct kanban/trello board
+a proper specification of aims + requiremens
+Web application systematic (iterative) development
+correct planning of development stages: 
+full monitoring of the entire development process
+
+How do we develop a web application
+Modeling - usually a methodology is adopted
+Requirements
+Software design
+Build (implementation)
+testing
+    - explority testing
+    - compatability testing
+    - security testing
+    - performance testing
+    - usability testing
+deployment
+maintenance
+    - revisit site once a week/month to make sure it is still working
+evolution
+
+Web application development: principles
+start with needs
+do less
+design with data
+do the hard work to make it simple
+iterate. then iterate again
+build for inclusion (be inclusive of all possible users)
+understand context 
+build digital serices, not Websites
+be consistent not uniform (make a common theme across every project, e.g. use similar SDLC where possible)
+make things open (open source) it makes things better
+
+When going open source always look at the copyright vs open source license (choosealicense.com is a way to help in choosing which license your specific project should use)
+
+modern methodologies:
+    - The twelve factor application
+    - aim42
+
+Exploring the web application domain
+attracting experts: subject mater expert (sme) or domain experts
+
+keep a scaleable design in mind when creating a web app
+
+Vision (Big idea)
+basecamp: "solves the critical problems that every growing buisness deals with"
+Vimeo: "wath, upload and share hd and 4k videos with no ads"
+
+more Requirements:
+navigation context
+user preferences
+permanantly available
+regarding the execution (runtime) environment:
+Web browser (in)dependance
+wired vs wireless
+on-line vs. off-line
+support for various HTML5 standards
+responsive web designregarding the evolution:
+end users are ale to deply the web application withour re-installing it on a computer device
+
+Aspects
+in the beggining: less is more, only provide essention features
+Architectures:
+web app quality is influenced by it's base architecture 
+architecture:
+complex apps should use OOP
+lots of database and the like should use a functional development architecture
+
+Clients
+firewall
+proxy
+middleware
+Web servers
+web application servers
+frameworks
+libraries, other components
+persistant storage server - e.g databases
+multimedia content server
+content management servers- for example componentslagacy applications/systems
+
+certain recipies regarding the web application development:
+freecodecamp.org/news/4-design-patterns-to-use-in-web-development/
+The singleton design pattern
+the strategy design pattern
+the observer design pattern
+the decorator design pattern
