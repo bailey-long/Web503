@@ -1,0 +1,63 @@
+ES6
+//ANCHOR Const mutations:
+Const elements cannot be reassigned, to change the value you must mutate the object, for example
+const s = [1,2,3]
+s = [3,1,2] // returns and error
+s[0] = 3;
+s[1] = 1;
+s[2] = 2;
+// this will change the result to [3,1,2]
+Alternatively s.unshift(s.pop()) //produces a correct answer
+
+//ANCHOR Object freezing
+if you want an objects properties to remain constant you can freeze the object
+Object.freeze(OBJECT), this will prevent any changes being made to the properties of the object.
+
+// ANCHOR Arrow/Inline Functions
+Arrow functions serve to create "one off" functions that do a small number of tasks, Inline functions work especially well when the funcitons exists
+only to return a value. For example:
+const myFunc = () => "Value"; The function will return the string "Value";
+To add parameters to an Inline funciton simply insert them into the parenthesis, if there is only one param you may exlude them.
+Inline functions support default parameters, meaning if no arguments were input when calling the function it will default to the set params.
+const increment = (number, value = 1) => number + value; This function means that if no value is specified the value will become 1.
+
+//ANCHOR Rest parameters
+allows for fucntions with a variable number of parameters, for example
+const sum = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+} 
+This will reduce the args input by putting them into a new inline funciton. 
+
+//ANCHOR Spread Operators
+spread operators allows the function to assume parts about the parameters regarding arrays and other expressions.
+An example without spread:
+var arr = [6, 89, 3, 45];
+var maximus = Math.max.apply(null, arr); // returns 89, if null was to be removed the function would throw an error
+An example using spread:
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr); // returns 89
+Another:
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+arr2 = [...arr1]; // automatically assigns arr1 to arr2
+
+//ANCHOR Destructuring assignment
+Destructuring is a faster way of accessing object property values by creating and assigning the values as shown in the example below:
+const { name, age } = user; // name becames the name of user and the same for age
+
+You can use Destructuring to ressign values to properties in the object in question shown bellow:
+const {name: John Doe, age: 69} = user;
+
+Using Destructuring you can access nested elements with ease as shown bellow:
+//Objectconst user = {
+  johnDoe: { 
+    age: 34,
+    email: 'johnDoe@freeCodeCamp.com'
+  }
+};
+//Destructuring
+const { johnDoe: { age, email }} = user;
+
+//ANCHOR using spread with Destructuring
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6]; // this will assign a = 1, b = 2, and c = 5 because of the spread after b.
+
