@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+}
+div{
+    border-width: 5px 5px 5px 5px;
+    border-style: dotted;
+    border-color: red;  
+    height: 500px; width: 500px;
+    background: darkgray;
+}
+p{
+    font-size: 2em;
+    background: lightgray;
+    height: 50%px; width: 100%;
+}
+span{
+    background: yellow;
+    font-size: 1em;
+    height: 2em; width: 100px;
+}
