@@ -1,3 +1,4 @@
+/*
 body{
     margin: 0;
 }
@@ -17,4 +18,30 @@ span{
     background: yellow;
     font-size: 1em;
     height: 2em; width: 100px;
+}
+*/
+.wrapper{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 30% 5% 65%;
+    grid-template-rows: 40px auto 20px auto;
+}
+.mainheaer{
+    grid-column: 1/4;
+    grid-row: 2/3;
+}
+.panel{
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+.content{
+    grid-column: 3/4;
+    grid-row: 4/5;
+}
+.mainfooter{
+    background-color: black;
+    grid-column: 1/4;
+    grid-row: 5/6;
 }
